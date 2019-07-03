@@ -36,19 +36,21 @@ else if (playerInput == '3'){
 
 printMessage('Twój ruch to: ' + playerMove);
 // Result
+let winerIs = 'nieznany ruch';
 
-if( computerMove == 'kamień' && playerMove == 'papier'){
-  printMessage('Ty wygrywasz!');
+if(computerMove == 'kamień' && playerMove == 'papier'){
+  winerIs = 'player';
 }
 
-else if( computerMove == 'papier' && playerMove == 'papier'){
-  printMessage('Remis!');
+else if(computerMove == 'papier' && playerMove == 'papier'){
+  winerIs = 'Draw';
 }
 
-else if( computerMove == 'nożyce' && playerMove == 'papier'){
-  printMessage('Ty wygrywasz!');
+else if(computerMove == 'nożyce' && playerMove == 'papier'){
+  winerIs = 'computer';
 }
 
-else if( computerMove == 'kamień' && playerMove == 'nieznanty ruch'){
-  printMessage('Brak wyniku!');
+else if(computerMove == 'kamień' && playerMove == 'nieznanty ruch'){
+  winerIs = 'brak wyniku';
 }
+printMessage('Ty wygrywasz!' + winerIs);

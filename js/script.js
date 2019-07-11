@@ -1,14 +1,16 @@
-
-function playGame(playerInput) {
+{
+  function playGame(playerInput) {
   
   /* PROCES GRY */
-
+  function clearMessages(){
+  document.getElementById('messages').innerHTML = '';
+  }
   // ustalenie wyboru gracza
-  let playerMove = getMoveName(playerInput);
+  const playerMove = getMoveName(playerInput);
 
   //ustalenie wyboru komputera
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
-  let computerMove = getMoveName(randomNumber);
+  const randomNumber = Math.floor(Math.random() * 3 + 1),
+        computerMove = getMoveName(randomNumber);
 
   // wysietlamy wynik1
   displayResult(playerMove, computerMove);
@@ -39,8 +41,8 @@ function playGame(playerInput) {
         printMessage('Przegrywasz :(');
       }
   }
-
 }
+
 
 document.getElementById('play-rock').addEventListener('click', function() {
   playGame(1);
@@ -53,3 +55,5 @@ document.getElementById('play-paper').addEventListener('click', function() {
 document.getElementById('play-scissors').addEventListener('click', function() {
   playGame(3);
 });
+
+}
